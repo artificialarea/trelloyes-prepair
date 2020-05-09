@@ -4,16 +4,32 @@ import List from './composition/List';
 import Card from './composition/Card';
 
 function App(props) {
-  console.log(props.store.lists[0]);
 
   let lists = props.store.lists.map((list, index) => {
+    // let cardIndex = props.store.lists[index].cardIds;
+    // let cardSet = Object.values(cardIndex);
+    // console.log(cardSet);
+
+    const raw = props.store.allCards
+    
+    const allowed = list.cardIds;
+    console.log(allowed);
+    
+    const filtered = Object.keys(raw)
+      .filter(id => allowed.includes(id))
+      .reduce((obj, id) => {
+        obj[id] = raw[id];
+        return obj;
+      }, {});
+    
+     console.log(filtered);
     return (
       <List 
-        storeList={props.store.allCards}
+        storeList={filtered}
         key={index}
         id={props.store.lists[index].id}
         header={props.store.lists[index].header}
-        cardsIds={props.store.lists[index].cardsIds}
+        cardIds={allowed}
       ></List>
     );
   });
