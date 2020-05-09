@@ -15,12 +15,14 @@ function List(props) {
   });
   console.log(Object.keys(props.storeList));
   return (
-    <div>
+    <section className="List">
       <header className="List-header">
         <h2>{props.header}</h2>
       </header>
-      {cards}
-    </div>
+      <div className='List-cards'>
+        {cards}
+      </div>
+    </section>
   );
 }
 

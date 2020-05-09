@@ -6,13 +6,14 @@ import Card from './composition/Card';
 function App(props) {
    console.log(props.store.allCards);
   return (
-    <div className="App">
-      <List storeList={props.store.allCards} />
-      {/* <List />
-      <List />
-      <List /> */}
-      
-    </div>
+    <main className="App">
+      <header className="App-header">
+        <h1>Trelloyes!</h1>
+      </header>
+      <div className="App-list">
+        <List storeList={props.store.allCards} />
+      </div>
+    </main>
   );
 }
 
