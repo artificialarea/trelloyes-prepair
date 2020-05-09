@@ -1,19 +1,30 @@
-import React from 'react';
-import './List.css';
-import Card from './Card';
+import React from "react";
+import "./List.css";
+import Card from "./Card";
 
 function List(props) {
+  let cards = Object.keys(props.storeList).map((card, index) => {
+    return (
+      <Card
+        key={index}
+        id={props.storeList[card].id}
+        title={props.storeList[card].title}
+        content={props.storeList[card].content}
+      ></Card>
+    );
+  });
+  console.log(Object.keys(props.storeList));
   return (
     <div>
-      <header class="List-header">
-          <h2>Second list</h2>
-        </header>
-      <Card title={props.title}  content={props.content} />
+      <header className="List-header">
+        <h2>{props.header}</h2>
+      </header>
+      {cards}
     </div>
   );
 }
 
-export default List
+export default List;
 
 /* REQUIREMENTS
 

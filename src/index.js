@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-// import STORE from './store';
+import STORE from './store';
 
 /* QUESTION...
 How to pass STORE object to your App as its 'store' prop.?
@@ -14,7 +14,7 @@ but I've been instructed to: '...import into your index.js and pass to your App 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App store={STORE} />
   </React.StrictMode>,
   document.getElementById('root')
 );

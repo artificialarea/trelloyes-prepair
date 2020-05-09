@@ -1,17 +1,16 @@
 import React from 'react';
 import './App.css';
-import STORE from './store';
 import List from './composition/List';
 import Card from './composition/Card';
 
 function App(props) {
-   console.log(STORE);
+   console.log(props.store.allCards);
   return (
     <div className="App">
+      <List storeList={props.store.allCards} />
+      {/* <List />
       <List />
-      <List />
-      <List />
-      <List />
+      <List /> */}
       
     </div>
   );
