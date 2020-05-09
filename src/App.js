@@ -1,17 +1,18 @@
 import React from 'react';
 import './App.css';
-// import STORE from './store';
+import STORE from './store';
 import List from './composition/List';
 import Card from './composition/Card';
 
-function App() {
-  // console.log(STORE);
+function App(props) {
+   console.log(STORE);
   return (
     <div className="App">
       <List />
       <List />
       <List />
       <List />
+      
     </div>
   );
 }

@@ -5,7 +5,10 @@ import Card from './Card';
 function List(props) {
   return (
     <div>
-      <Card />
+      <header class="List-header">
+          <h2>Second list</h2>
+        </header>
+      <Card title={props.title}  content={props.content} />
     </div>
   );
 }
