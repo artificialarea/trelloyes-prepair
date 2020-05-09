@@ -5,14 +5,14 @@ import Card from './composition/Card';
 
 function App(props) {
   console.log(props);
-  let lists = Object.keys(props.storeList).map((list, index) => {
+  let lists = Object.keys(props.store).map((list, index) => {
     return (
       <List 
         storeList={props.store.allCards}
         key={index}
-        id={props.storeList[list].id}
-        header={props.storeList[list].header}
-        cardsIds={props.storeList[list].cardsIds}
+        id={props.store[list].id}
+        header={props.store[list].header}
+        cardsIds={props.store[list].cardsIds}
       ></List>
     );
   });
