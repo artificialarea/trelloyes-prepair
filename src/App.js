@@ -6,30 +6,23 @@ import Card from './composition/Card';
 function App(props) {
 
   let lists = props.store.lists.map((list, index) => {
-    // let cardIndex = props.store.lists[index].cardIds;
-    // let cardSet = Object.values(cardIndex);
-    // console.log(cardSet);
 
+    // to get appropriate 'filtered' cards per list
     const raw = props.store.allCards
-    
     const allowed = list.cardIds;
-    console.log(allowed);
-    
     const filtered = Object.keys(raw)
       .filter(id => allowed.includes(id))
       .reduce((obj, id) => {
         obj[id] = raw[id];
         return obj;
       }, {});
-    
-     console.log(filtered);
+
     return (
       <List 
-        storeList={filtered}
         key={index}
         id={props.store.lists[index].id}
         header={props.store.lists[index].header}
-        cardIds={allowed}
+        storeList={filtered}
       ></List>
     );
   });

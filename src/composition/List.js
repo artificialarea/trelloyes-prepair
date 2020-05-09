@@ -13,7 +13,7 @@ function List(props) {
       ></Card>
     );
   });
-  console.log(Object.keys(props.storeList));
+
   return (
     <section className="List">
       <header className="List-header">
