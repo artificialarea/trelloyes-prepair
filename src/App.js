@@ -4,15 +4,16 @@ import List from './composition/List';
 import Card from './composition/Card';
 
 function App(props) {
-  console.log(props);
-  let lists = Object.keys(props.store).map((list, index) => {
+  console.log(props.store.lists[0]);
+
+  let lists = props.store.lists.map((list, index) => {
     return (
       <List 
         storeList={props.store.allCards}
         key={index}
-        id={props.store[list].id}
-        header={props.store[list].header}
-        cardsIds={props.store[list].cardsIds}
+        id={props.store.lists[index].id}
+        header={props.store.lists[index].header}
+        cardsIds={props.store.lists[index].cardsIds}
       ></List>
     );
   });
