@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
 import List from './composition/List';
-import Card from './composition/Card';
 
 function App(props) {
 
   let lists = props.store.lists.map((list, index) => {
 
-    // to get appropriate 'filtered' cards per list
+    // Filtering allCards by cardIds to get appropriate cards per list. // This was where we got stuck =/ // Thanks Stephen! =D
     const raw = props.store.allCards
     const allowed = list.cardIds;
     const filtered = Object.keys(raw)
@@ -41,6 +40,8 @@ function App(props) {
 }
 
 export default App;
+
+
 
 /* REQUIREMENTS
 

@@ -13,6 +13,8 @@ function Card(props) {
 
 export default Card
 
+
+
 /* REQUIREMENTS
 
 // The 'Card' component should render markup matching the design.html: a div with a class of 'Card' containing an <h3> for the card's title and a <p> element for the card's content.
