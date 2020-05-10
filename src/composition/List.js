@@ -1,6 +1,6 @@
 import React from "react";
-import "./List.css";
 import Card from "./Card";
+import "./List.css";
 
 function List(props) {
   let cards = Object.keys(props.storeList).map((card, index) => {
