@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import STORE from './STORE';
+import './index.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App store={STORE} />
-  </React.StrictMode>,
+    <App store={STORE} />,
   document.getElementById('root')
 );

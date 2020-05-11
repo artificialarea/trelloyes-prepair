@@ -2,44 +2,87 @@ import React, { Component } from 'react';
 import List from './composition/List';
 import './App.css';
 
-function App(props) {
+/*
+// NOTE RE:PROPS btwn v1 (function Component) & v2 (class Component):
+One difference between render() and a function Component() is how 'props' work. In a function component, 'props' are a parameter, as we've seen. In a class, however, 'props' aren't a parameter anymore, we need to access props using 'this.props'.
+*/
 
-  let lists = props.store.lists.map((list, index) => {
+// v2: tomatau solution
+class App extends React.Component {
 
-    // Filtering allCards by cardIds to get appropriate cards per list. // This was where we got stuck =/ // Thanks Stephen! =D
-    const raw = props.store.allCards
-    const allowed = list.cardIds;
-    const filtered = Object.keys(raw)
-      .filter(id => allowed.includes(id))
-      .reduce((obj, id) => {
-        obj[id] = raw[id];
-        return obj;
-      }, {});
+  // defaultProps will be used 
+  // if no equivalent prop is supplied
+  static defaultProps = {
+    store: {
+      lists: [],
+      allCards: {},
+    }
+  };
 
+  render() {
+    const { store } = this.props;   // See NOTE RE:PROPS above
     return (
-      <List 
-        key={index}
-        id={props.store.lists[index].id}
-        header={props.store.lists[index].header}
-        storeList={filtered}
-      ></List>
+      <main class="App">
+        <header class="App-header">
+          <h1>Trelloyes!</h1>
+        </header>
+        <div class="App-list">
+          {/* <List /> */}
+          {store.lists.map(list => 
+            <List 
+              key={list.id}
+              header={list.header}
+              cards = {list.cardIds.map(id => store.allCards[id])}
+            />
+          )}
+        </div>
+      </main>
     );
-  });
-
-  return (
-    <main className="App">
-      <header className="App-header">
-        <h1>Trelloyes!</h1>
-      </header>
-      <div className="App-list">
-        {lists}
-        {/* <List storeList={props.store.allCards} /> */}
-      </div>
-    </main>
-  );
+  };
 }
 
 export default App;
+
+
+// // v1: me
+// function App(props) {
+
+//   let lists = props.store.lists.map((list, index) => {
+
+//     // Filtering allCards by cardIds to get appropriate cards per list. // This was where we got stuck =/ // Thanks Stephen! =D
+//     const raw = props.store.allCards
+//     const allowed = list.cardIds;
+//     const filtered = Object.keys(raw)
+//       .filter(id => allowed.includes(id))
+//       .reduce((obj, id) => {
+//         obj[id] = raw[id];
+//         return obj;
+//       }, {});
+
+//     return (
+//       <List 
+//         key={index}
+//         id={props.store.lists[index].id}
+//         header={props.store.lists[index].header}
+//         storeList={filtered}
+//       ></List>
+//     );
+//   });
+
+//   return (
+//     <main className="App">
+//       <header className="App-header">
+//         <h1>Trelloyes!</h1>
+//       </header>
+//       <div className="App-list">
+//         {lists}
+//         {/* <List storeList={props.store.allCards} /> */}
+//       </div>
+//     </main>
+//   );
+// }
+
+// export default App;
 
 
 
