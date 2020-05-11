@@ -2,7 +2,7 @@ import React from "react";
 import Card from "./Card";
 import "./List.css";
 
-// v2: tomatau soluton
+// v2: tomatau soluton ////////////////////////////////////////////
 export default function List(props) {
   return (
     <section className="List">
@@ -31,7 +31,7 @@ export default function List(props) {
 }
 
 
-// // v1: me
+// // v1: me ////////////////////////////////////////////////////////
 // function List(props) {
 //   let cards = Object.keys(props.storeList).map((card, index) => {
 //     return (

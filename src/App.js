@@ -7,7 +7,7 @@ import './App.css';
 One difference between render() and a function Component() is how 'props' work. In a function component, 'props' are a parameter, as we've seen. In a class, however, 'props' aren't a parameter anymore, we need to access props using 'this.props'.
 */
 
-// v2: tomatau solution
+// v2: tomatau solution ///////////////////////////////////////////
 class App extends React.Component {
 
   // defaultProps will be used 
@@ -44,7 +44,7 @@ class App extends React.Component {
 export default App;
 
 
-// // v1: me
+// // v1: me ////////////////////////////////////////////////////////
 // function App(props) {
 
 //   let lists = props.store.lists.map((list, index) => {
