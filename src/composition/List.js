@@ -3,20 +3,32 @@ import Card from "./Card";
 import "./List.css";
 
 // v2: tomatau soluton ////////////////////////////////////////////
-export default function List(props) {
+class List extends React.Component {
+
+  // defaultProps will be used 
+  // if no equivalent prop is supplied
+  static defaultProps = {
+    key: '',
+    header: '',
+    cards: [],
+  };
+
+  render() {
+    //const card = this.props;
   return (
     <section className="List">
       <header className="List-header">
-        <h2>{props.header}</h2>
+        <h2>{this.props.header}</h2>
       </header>
       <div className="List-cards">
         {/* <Card /> */}
         {/* FYI: 'cards' defined in App.js <List cards={...} /> */}
-        {props.cards.map((card) =>  
+        {this.props.cards.map((card) =>  
           <Card 
             key={card.id}
             title={card.title}
             content={card.content}
+            
           />
         )}
         <button 
@@ -28,8 +40,10 @@ export default function List(props) {
       </div>
     </section>
   );
+  }
 }
 
+export default List;
 
 // // v1: me ////////////////////////////////////////////////////////
 // function List(props) {

@@ -9,7 +9,7 @@ describe('<List />', () => {
         const div = document.createElement('div');
 
         //render
-        ReactDom.render(<List key={[]} header={[]} cards={[]} />, div);
+        ReactDom.render(<List />, div);
 
         //clean 
         ReactDom.unmountComponentAtNode(div);
@@ -18,7 +18,8 @@ describe('<List />', () => {
 
     it('renders UI as expected', () => {
         //test
-        const tree = renderer.create(<List key={[]} header={[]} cards={[]}/>).toJSON();
+        const tree = renderer.create(<List />).toJSON();
         expect(tree).toMatchSnapshot();
     });
 });
+
