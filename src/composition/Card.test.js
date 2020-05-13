@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import renderer from 'react-test-renderer';
 
 import Card from './Card';
 
@@ -12,5 +13,11 @@ describe('<Card/>', () => {
 
         //clean 
         ReactDom.unmountComponentAtNode(div);
+    });
+
+    it('renders UI as expected', () => {
+        //test
+        const tree = renderer.create(<Card />).toJSON();
+        expect(tree).toMatchSnapshot();
     });
 });
