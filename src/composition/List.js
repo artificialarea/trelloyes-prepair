@@ -28,7 +28,7 @@ class List extends React.Component {
           )}
           <button 
             type="button" 
-            Nameclass="List-add-button"
+            className="List-add-button"
           >
             + Add Random Card
           </button>

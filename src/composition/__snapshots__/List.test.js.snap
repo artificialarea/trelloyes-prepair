@@ -15,7 +15,7 @@ exports[`<List /> renders UI as expected 1`] = `
     className="List-cards"
   >
     <button
-      Nameclass="List-add-button"
+      className="List-add-button"
       type="button"
     >
       + Add Random Card
