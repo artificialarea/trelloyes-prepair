@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Card/> renders UI as expected 1`] = `
+exports[`<Card /> renders UI as expected 1`] = `
 <div
   className="Card"
 >
   <button
+    onClick={[Function]}
     type="button"
   >
     delete

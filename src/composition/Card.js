@@ -1,11 +1,11 @@
 import React from 'react';
 import './Card.css';
 
-function Card(props) {
+export default function Card(props) {
   return (
-  <div className="Card" id={props.id}>
+  <div className="Card">
     <button 
-      onClick={() => props.onDeleteCard(props)}
+      onClick={() => props.onClickDelete(props.id)}
       type="button"
     >
       delete
@@ -16,4 +16,14 @@ function Card(props) {
   );
 }
 
-export default Card
+// HUH? propTypes. 
+// Shouldn't it be Card.defaultProps?
+Card.propTypes = {
+  onClickDelete: () => {},
+}
+// see: https://reactjs.org/docs/typechecking-with-proptypes.html
+// https://medium.com/@matanbobi/react-defaultprops-is-dying-whos-the-contender-443c19d9e7f1
+
+// Card.defaultProps = {
+//   onClickDelete: () => {},
+// }

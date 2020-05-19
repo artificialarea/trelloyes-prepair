@@ -7,17 +7,11 @@ import List from './List';
 describe('<List />', () => {
     it('renders without caching', ()=> {
         const div = document.createElement('div');
-
-        //render
         ReactDom.render(<List />, div);
-
-        //clean 
         ReactDom.unmountComponentAtNode(div);
-
     });
 
     it('renders UI as expected', () => {
-        //test
         const tree = renderer.create(<List />).toJSON();
         expect(tree).toMatchSnapshot();
     });
