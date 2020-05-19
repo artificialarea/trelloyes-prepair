@@ -14,7 +14,8 @@ export default function List(props) {
         <h2>{props.header}</h2>
       </header>
       <div className="List-cards">
-        {props.cards.map((card) => ( 
+        {/* had to add Conditional Rendering to pass test: https://www.debuggr.io/react-map-of-undefined/#25-inline-conditional-rendering */}
+        {props.cards && props.cards.map((card) => ( 
           <Card 
             key={card.id} 
             id={card.id}    
