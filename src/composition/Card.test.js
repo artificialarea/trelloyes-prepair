@@ -5,7 +5,7 @@ import renderer from 'react-test-renderer';
 import Card from './Card';
 
 describe('<Card />', () => {
-    it('renders without caching', ()=> {
+    it('renders without crashing', ()=> {
         const div = document.createElement('div');
         ReactDom.render(<Card />, div);
         ReactDom.unmountComponentAtNode(div);

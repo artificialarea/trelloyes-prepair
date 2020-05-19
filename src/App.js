@@ -37,8 +37,7 @@ class App extends Component {
   };
 
   handleDeleteCard = (cardId) => {
-    console.log('handleDeleteCard called', { cardId })
-
+    // console.log('handleDeleteCard called', { cardId })
     const { lists, allCards } = this.state.store;
     
     const newLists = lists.map(list => ({
@@ -57,7 +56,7 @@ class App extends Component {
   };
 
   handleAddCard = (listId) => {
-    console.log('handleAddCard called', { listId })
+    // console.log('handleAddCard called', { listId })
     const newCard = newRandomCard()
 
     const newLists = this.state.store.lists.map(list => {
@@ -84,6 +83,7 @@ class App extends Component {
 
   render() {
     const { store } = this.state
+    // console.log(store.lists);
 
     // NOTE: 'key' in <List key={list.id} /> is problematic special prop, thus requiring the addition of <List key={list.id} id={list.id} />
     // see: https://reactjs.org/warnings/special-props.html

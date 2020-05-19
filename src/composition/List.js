@@ -4,6 +4,7 @@ import './List.css';
 
 
 export default function List(props) {
+  // console.log(props.cards)
 
   // NOTE: 'key' in <Card key={card.id} /> is problematic special prop, thus requiring the addition of <Card key={card.id} id={card.id} />
   // see: https://reactjs.org/warnings/special-props.html
@@ -13,7 +14,7 @@ export default function List(props) {
         <h2>{props.header}</h2>
       </header>
       <div className="List-cards">
-        {props.cards.map((card) =>  
+        {props.cards.map((card) => ( 
           <Card 
             key={card.id} 
             id={card.id}    
@@ -21,7 +22,7 @@ export default function List(props) {
             content={card.content}
             onClickDelete={props.onClickDelete}
           />
-        )}
+        ))}
         <button 
           onClick={() => props.onClickAdd(props.id)}
           type="button" 
@@ -31,7 +32,7 @@ export default function List(props) {
         </button>
       </div>
     </section>
-  );
+  )
 }
 
 List.defaultProps = {

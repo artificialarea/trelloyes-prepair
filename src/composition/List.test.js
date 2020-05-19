@@ -5,7 +5,7 @@ import renderer from 'react-test-renderer';
 import List from './List';
 
 describe('<List />', () => {
-    it('renders without caching', ()=> {
+    it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDom.render(<List />, div);
         ReactDom.unmountComponentAtNode(div);
