@@ -24,9 +24,12 @@ class List extends React.Component {
               key={card.id}
               title={card.title}
               content={card.content}
+              // passing callback props down
+              onDeleteCard={this.props.onDeleteCard}
             />
           )}
           <button 
+            onClick={() => this.props.onAddRandomCard(this.props)}
             type="button" 
             className="List-add-button"
           >
