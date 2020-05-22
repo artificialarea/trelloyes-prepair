@@ -13,6 +13,8 @@ const newRandomCard = () => {
     content: 'lorem ipsum',
   }
 }
+// ^^^^ alternatively, could add a key/value 'counter' in the store object 
+// and setState of counter: counter += 1 each time render new card.
 
 // fn provided
 // to remove key value pair from an object
